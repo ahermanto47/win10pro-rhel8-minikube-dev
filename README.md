@@ -31,6 +31,16 @@ minikube stop
 minikube start --insecure-registry localhost:5000 --vm-driver=kvm2 --apiserver-ips=<host-ip-address> --extra-config=kubelet.housekeeping-interval=10s
 ```
 
+## Configure Haproxy
+
+> Sometimes we want to access the minikube resources from another machine, in this case we setup ha proxy
+
+For simple setup, allow haproxy to listen to any port
+
+```
+sudo setsebool -P haproxy_connect_any on
+```
+
 ## TODO
 
 > At some point maybe automate this instruction
